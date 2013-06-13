@@ -52,6 +52,7 @@
 	
 	// Init touchable words colors
 	_colorHashtag = [UIColor colorWithWhite:170.0/255.0 alpha:1.0];
+	_colorAccount = [UIColor colorWithWhite:100.0/255.0 alpha:1.0];
 	_colorLink = [UIColor colorWithRed:129.0/255.0 green:171.0/255.0 blue:193.0/255.0 alpha:1.0];
 }
 
@@ -68,14 +69,14 @@
         return;
     }
     
-    if (_fontHashtag == nil)
-    {
-        _fontHashtag = self.font;
-    }
-    
     if (_fontLink == nil)
     {
         _fontLink = self.font;
+    }
+    
+    if (_fontHashtag == nil)
+    {
+        _fontHashtag = self.font;
     }
     
     [touchLocations removeAllObjects];
@@ -243,7 +244,7 @@
                     }
                     else if ([wordCharacters hasPrefix:@"@"])
                     {
-                        [_colorHashtag set];
+                        [_colorAccount set];
                         lastPrefix = @"@";
                     }
                     else if ([wordCharacters hasPrefix:@"http"])
@@ -375,7 +376,7 @@
                         }
                         else if ([lastPrefix isEqualToString:@"@"])
                         {
-                            [_colorHashtag set];
+                            [_colorAccount set];
                         }
                         else if ([lastPrefix isEqualToString:@"http"])
                         {
