@@ -67,7 +67,6 @@ typedef enum {
 @interface STTweetLabel : UILabel
 {
     NSMutableArray *sizeLines;
-    
     NSMutableArray *touchLocations;
     NSMutableArray *touchWords;
 }
@@ -86,7 +85,7 @@ typedef enum {
 @property (nonatomic, strong) UIFont *fontLink;
 
 /**
- The font of the different hashtags and mentions.
+ The font used to display hashtags.
  
  The default value for this property is the font of the text.
  
@@ -95,18 +94,28 @@ typedef enum {
 @property (nonatomic, strong) UIFont *fontHashtag;
 
 /**
- The color of the different links.
+ The color used for links.
  
- The default value for this property is `RGB(170,170,170)`.
+ The default value for this property is `RGB(129,171,193)`.
  
  @warning You must specify a value for this parameter before `setText:`
  */
 @property (nonatomic, strong) UIColor *colorLink;
 
 /**
- The color of the different hashtags and mentions.
+ The color used for accounts.
  
- The default value for this property is `RGB(129,171,193)`.
+ The default value for this property is `RGB(100,100,100)`.
+
+ 
+ @warning You must specify a value for this parameter before `setText:`
+ */
+@property (nonatomic, strong) UIColor *colorAccount;
+
+/**
+ The color used for hashtags.
+ 
+ The default value for this property is `RGB(170,170,170)`.
  
  @warning You must specify a value for this parameter before `setText:`
  */
